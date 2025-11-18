@@ -1,3 +1,5 @@
+const prompt = require ('prompt-sync')()
+
 let aluno1 = {
     aluno: "Willian",
     conteudo: "Programação",
@@ -7,13 +9,17 @@ let aluno1 = {
     pago: false
 }
 
-let aluno2 = {}
+
+/* ^^^^^^^^^^^ Aluno ^^^^^^^^^^^*/
 
 
+let menu = prompt("Você quer 'Registrar aulas', 'Desmarcar aulas pendentes', 'Registrar pagamento', 'Consultar agenda', 'Sair' ")
+
+menu.toLowerCase()
 
 
+/* ^^^^^^^^^^^ O sistema que define os comportamentos do algorítmo ^^^^^^^^^^^*/
 
-let menu = prompt("Você quer 'Registrar aulas', 'Desmarcar aulas pendentes', 'Registrar pagamento', 'Consultar agenda', 'sair'" )
 
 switch (menu) {
     case "registrar aulas":
@@ -38,4 +44,39 @@ switch (menu) {
         } else if(tipoDePagamento) {
             aluno1.pendente - 300
         }
+        break;
+    case "consultar agenda":
+        console.log(aluno1.agendado)
+        break;
+    case "sair":
+        false
+        break;
+    default:
+        false
 }
+
+
+/* ^^^^^^^^^^^ As possibilidades do código ^^^^^^^^^^^*/
+
+
+if(aluno1.pago === 0) {
+    aluno1.pago = prompt(true)
+}
+
+/* ^^^^^^^^^^^ Serve para atualizar o estado de pagamento ^^^^^^^^^^^*/
+
+
+let pergunta2 = prompt("Quer ver o seu perfil ")
+
+switch (pergunta2) {
+    case sim:
+        console.log(aluno1)
+        break;
+    case nao:
+        console.log("Sistema desligando")
+        break;
+        default:
+            console.log("Algo de errado no seu dígito")
+}
+
+/* ^^^^^^^^^^^ Perguntas finais ^^^^^^^^^^^*/
